@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    container_name: minha-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app    
+
+# Como a aplicação usa SQLite, não é necessário um serviço de banco de dados separado.
+# O arquivo do banco de dados (escola.db) será criado no diretório local
+# graças ao mapeamento de volume (volumes: - .:/app).
